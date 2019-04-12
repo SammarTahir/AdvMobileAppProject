@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project.Views.UnseenMovies">
+
+    <ContentPage.Resources>
+        <DataTemplate x:Key="SmallShowsTemplate">
+            <ViewCell>
+                <StackLayout Margin="2" >
+                    <StackLayout Orientation="Horizontal" Margin="2, 1">
+                        <Label Text="Title: " />
+                        <Label Text="{Binding Path=Title}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="2, 1">
+                        <Label Text="Ranking: " />
+                        <Label Text="{Binding Path=Rank}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="2, 1">
+                        <Label Text="Movie ID: " />
+                        <Label Text="{Binding Path=ID}" />
+                    </StackLayout>
+                </StackLayout>
+            </ViewCell>
+            
+        </DataTemplate>
+    </ContentPage.Resources>
+
+    <Grid>
+      
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Text="TV Shows!"
+               HorizontalOptions="Center" Margin="0, 5"
+               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
+
+        <ListView x:Name="lvShows" Grid.Row="1" Grid.Column="1"
+                  Margin="2,1,2,0" ItemsSource="{Binding ShowsList, Mode=TwoWay}"
+                  ItemTemplate="{StaticResource SmallShowsTemplate}"
+                  SelectedItem="{Binding SelectedShow, Mode=TwoWay}"
+                  ItemSelected="LvShows_ItemSelected">
+
+        </ListView>
+    </Grid>
+</ContentPage>

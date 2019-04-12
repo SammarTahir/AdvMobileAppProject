@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project.Views.AddShowPage">
+    <Grid>
+        <StackLayout>
+            <StackLayout x:Name="slEditable">
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Title: " />
+                    <Entry x:Name="entTitle" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Seasons: " />
+                    <Entry x:Name="entSeasons" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Rating: " />
+                    <Entry x:Name="entRating" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Description: " />
+                    <Entry x:Name="entDescription"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout x:Name="slButtons" Orientation="Horizontal" 
+                     Margin="0, 2" Grid.Row="2" 
+                     Grid.Column="1">
+            <Button x:Name="btnSaveFile" Text="Save" Margin="2" Clicked ="btnSaveFile_Clicked" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
