@@ -14,33 +14,9 @@ namespace Project
         public MainPage()
         {
             InitializeComponent();
-            SetDefaultStuffMethod();
         }
 
-        ObservableCollection<Shows> showsList;
-
-        private void SetDefaultStuffMethod()
-        {
-            if (showsList == null) showsList = new ObservableCollection<Shows>();
-
-            showsList = Utils.ReadShowsListData();
-            // set the data context for the list view
-            lvShows.ItemsSource = showsList;
-
-        }
-
-        private void RefreshShowsListView()
-        {
-            lvShows.ItemsSource = null;
-            lvShows.ItemsSource = showsList;
-        }
-        
-        private async void LvShows_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            await Navigation.PushAsync(new ShowDetailPage(e.SelectedItem as Shows));
-            //await (BindingContext as MainPageViewModel).SelectOneShowAsync(e.SelectedItem as Shows);
-        }
-
+     
         private void DeleteContext_Clicked(object sender, EventArgs e)
         {
             // really nice to get the object that was clicked.
