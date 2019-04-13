@@ -55,8 +55,7 @@
                      Grid.Column="1">
            
 
-            <Button x:Name="BtnHome" Text="Home" 
-                    Style="{StaticResource ButtonStyle}" Clicked="BtnHome_Clicked"/>
+            <Button x:Name="BtnHome" Text="Home" Clicked="BtnHome_Clicked"/>
         </StackLayout>
     </Grid>
 </ContentPage>

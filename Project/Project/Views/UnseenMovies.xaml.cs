@@ -4,8 +4,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Windows.System;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
 
 namespace Project.Views
@@ -34,13 +35,21 @@ namespace Project.Views
         // This should bring the user the IMDB page using the movie title/id
         private async void LvShows_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            await Navigation.PushAsync(new ShowDetailPage(e.SelectedItem as Shows));
+            // The URI to launch
+            var uriBing = new Uri(@"http://www.bing.com");
+
+            // Launch the URI
+           // var success = await Launcher.LaunchUriAsync(uriBing);
+
+            
         }
 
         private void BtnHome_Clicked(object sender, EventArgs e)
         {
             Navigation.PushModalAsync(new MainPage());
         }
+
+        
 
         // UnUsed so far
         #region UN-USED
