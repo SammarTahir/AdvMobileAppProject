@@ -16,33 +16,29 @@ namespace Project
             InitializeComponent();
         }
 
-     
-        private void DeleteContext_Clicked(object sender, EventArgs e)
-        {
-            // really nice to get the object that was clicked.
-            Shows show = (sender as MenuItem).CommandParameter as Shows;
-            //dogsList.Remove(dog);
-            (BindingContext as MainPageViewModel).DeleteFromList(show);
-
-        }
-
-        private void btnSaveFile_Clicked(object sender, EventArgs e)
-        {
-            // save the list of show to the local application folder
-            // MyUtils.SaveShowListData(showsList);
-            // Need a reference to the current viewmodel
-            (BindingContext as MainPageViewModel).SaveList();
-        }
-
-        private void btnAddShow_Clicked(object sender, EventArgs e)
-        {
-
-            Navigation.PushModalAsync(new AddShowPage());
-        }
-
-        private void BtnUnseen_Clicked(object sender, EventArgs e)
+        // This will bring the user to list view of all the movies
+        private void BtnMovie_Clicked(object sender, EventArgs e)
         {
             Navigation.PushModalAsync(new UnseenMovies());
+        }
+
+        // This will bring the user to a page where they can edit the list to suit
+        // their own liking
+        private void BtnEdit_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new EditMoviePage());
+        }
+
+        // This will allow the user to use the camera function only made for window platforms... so far
+        private void BtnCamera_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        // Bring the user the about us page
+        private void BtnInfo_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

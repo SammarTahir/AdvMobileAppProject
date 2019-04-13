@@ -6,36 +6,38 @@
              BackgroundImage="Assets/background.jpg">
 
     <ContentPage.Resources>
-        <Style x:Key="EntryStyle" TargetType="Entry" >
-            <Setter Property="FontSize" Value="Small" />
-            <Setter Property="TextColor" Value="Blue" />
-        </Style>
+        <!-- Style for Button -->
         <Style x:Key="ButtonStyle" TargetType="Button" >
-            <Setter Property="CornerRadius" Value="7" />
-            <Setter Property="BackgroundColor" Value="BlueViolet" />
+            <Setter Property="CornerRadius" Value="1" />
+            <Setter Property="BackgroundColor" Value="PaleVioletRed" />
+            <Setter Property="WidthRequest" Value="150" />
+            <Setter Property="Margin" Value="0, 10" />
+        </Style>
+        <!--Style for Header -->
+        <Style x:Key="heading" TargetType="Label">
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="FontAttributes" Value="Italic"/>
+            <Setter Property="TextColor" Value="Black"/>
         </Style>
     </ContentPage.Resources>
-    <Grid>
-        <StackLayout x:Name="slButtons" Orientation="Horizontal" 
-                     Margin="0, 2" Grid.Row="1" 
-                     Grid.Column="1">
-            <Button x:Name="btnSaveFile" Text="Save" 
-                    Style="{StaticResource ButtonStyle}"
-                    Command="{Binding SaveListCommand}"
-                    Margin="2" />
-            <Button x:Name="btnDeleteOne" Text="Delete"
-                    Style="{StaticResource ButtonStyle}"
-                    Command="{Binding DeleteFromListCommand}"
-                    CommandParameter="{Binding SelectedShow}"
-                    />
-            <Button x:Name="btnAddShow" Text="Add New Show"
-                   Style="{StaticResource ButtonStyle}"
-                    Clicked ="btnAddShow_Clicked"/>
-            <Label x:Name="lblCount" Text="" />
-            <Button x:Name="btnUnseen" Text="View all unseen shows"
-                   Style="{StaticResource ButtonStyle}"
-                    Clicked ="BtnUnseen_Clicked"/>
-        </StackLayout>
-    </Grid>
 
+
+    <StackLayout>
+        <StackLayout x:Name="heading">
+            <Label Text="Your Personal IMDB" Style="{StaticResource heading}"
+           HorizontalOptions="Center" Margin="0, 5"/>
+        </StackLayout>
+
+        <StackLayout  x:Name="slButtons" Orientation="Vertical" 
+                     Margin="0, 20">
+            <Button Text="Show all movies " x:Name="BtnMovie"  Style="{StaticResource ButtonStyle}"
+                    HorizontalOptions="Center"  Clicked="BtnMovie_Clicked" />
+            <Button Text="Edited the list" x:Name="BtnEdit"  Style="{StaticResource ButtonStyle}" 
+                    HorizontalOptions="Center" Clicked="BtnEdit_Clicked"/>
+            <Button Text="Make your own movie" x:Name="BtnCamera"  Style="{StaticResource ButtonStyle}"
+                    HorizontalOptions="Center" Clicked="BtnCamera_Clicked" />
+            <Button Text="Information"  x:Name="BtnInfo"  Style="{StaticResource ButtonStyle}"
+                    HorizontalOptions="Center" Clicked="BtnInfo_Clicked"/>
+        </StackLayout>
+    </StackLayout>
 </ContentPage>

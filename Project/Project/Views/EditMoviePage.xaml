@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project.Views.EditMoviePage">
+    <ContentPage.Resources>
+        <Style x:Key="EntryStyle" TargetType="Entry" >
+            <Setter Property="FontSize" Value="Small" />
+            <Setter Property="TextColor" Value="DarkOrange" />
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button" >
+            <Setter Property="CornerRadius" Value="7" />
+            <Setter Property="BackgroundColor" Value="YellowGreen" />
+        </Style>
+        <DataTemplate x:Key="SmallMovieTemplate">
+            <ViewCell>
+                <StackLayout Margin="2">
+                    <StackLayout Orientation="Horizontal" Margin="2, 1">
+                        <Label Text="Title: " />
+                        <Label Text="{Binding Path=Title}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="2, 1">
+                        <Label Text="Rank: " />
+                        <Label Text="{Binding Path=Rank}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="2, 1">
+                        <Label Text="ID: " />
+                        <Label Text="{Binding Path=ID}" />
+                    </StackLayout>
+                </StackLayout>
+            </ViewCell>
+        </DataTemplate>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Text="Make you movie list personal"
+               HorizontalOptions="Center" Margin="0, 5"
+               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+        <ListView x:Name="lvShow" Margin="3, 3, 3, 0"
+                  ItemSelected="lvShow_ItemSelected"
+                  Grid.Row="1" Grid.Column="0"
+                  ItemTemplate="{StaticResource SmallMovieTemplate}" />
+
+        <StackLayout Grid.Row="1" x:Name="slOneElement"
+                     Grid.Column="1" 
+                     Margin="10">
+
+            <StackLayout x:Name="slNonEdits">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="ID: " />
+                    <Label x:Name="lblOneMovieID" Text="{Binding Path=ID}" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout x:Name="slEditable" Orientation="Vertical">
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Title: " />
+                    <Entry x:Name="entTitle" 
+                           Text="{Binding Path=title}"
+                           HorizontalOptions="FillAndExpand" 
+                           Style="{StaticResource EntryStyle}"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout x:Name="slButtons" Orientation="Horizontal" 
+                     Margin="0, 2" Grid.Row="2" 
+                     Grid.Column="1">
+            <Button x:Name="btnSaveFile" Text="Save" 
+                    Style="{StaticResource ButtonStyle}"
+                    Clicked="btnUpdateOne_Clicked"
+                    Margin="2" />
+
+            <Button x:Name="Home" Text="Home Page" Style="{StaticResource ButtonStyle}" Clicked="Home_Clicked"/>
+        </StackLayout>
+
+    </Grid>
+</ContentPage>
