@@ -21,9 +21,17 @@ This app was made for users who love watching movies and doing reviews. I though
 ---
 
  ## Testing
- ##### Windows app
+
 | Test          |  Test plan         | Result  |
 | ------------- |:------------------:| -------:|
 | To see if app works without erros |Run App| Pass |
-| Check if movie list works | Click on the views movies button |  Pass |
-| zebra stripes | are neat      |    Pass |
+| Check if movie list works | Click on the views movies button | Pass |
+| Check if edit movies works | Click on the edit movies button | Pass |
+| Check if make movies works | Click on the make movie button | Pass |
+| Check if information page works | Click on the information page | Pass |
+| Take picture of reaction from movie | On the list movies page select any movie and allow camera to open | Pass |
+| Picture appears at the bottom of page | Take a picture and close the camera app | Pass |
+| Edit the top 100 list | Select a movie and change the title then press save | Pass |
+
+
+ ##### _Tests done on Windows app_
