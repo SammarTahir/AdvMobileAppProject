@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Project.Views.MakeMoviePage">
     <ScrollView>
-        <StackLayout>
-           
+        <StackLayout Orientation="Vertical"
+                     Padding="10">
             <Button Text="Make a movie"    
                     x:Name="BtnRecord"    
                     BackgroundColor="Gray"    

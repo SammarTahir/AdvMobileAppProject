@@ -16,5 +16,15 @@ namespace Project.Views
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void BtnRecord_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnSelect_Clicked(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

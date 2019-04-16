@@ -56,6 +56,9 @@
            
 
             <Button x:Name="BtnHome" Text="Home" Clicked="BtnHome_Clicked"/>
+
+            <Image x:Name="MainImage" />
+            <Label x:Name="PathLabel" FontSize="14" TextColor="Black"/>
         </StackLayout>
     </Grid>
 </ContentPage>

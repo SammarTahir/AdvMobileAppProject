@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project.Views.SavedMedia">
+    <StackLayout Orientation="Vertical"
+                     Padding="10">
+        <Button Text="Select a Video"    
+                    x:Name="BtnFilm"    
+                    BackgroundColor="Green"    
+                    Clicked="BtnFilm_Clicked"/>
+        <Button Text="Select a Image"    
+                    x:Name="BtnSelect"    
+                    BackgroundColor="Green"    
+                    Clicked="BtnSelect_Clicked"/>
+        <Button x:Name="BtnHome" Text="Home" BackgroundColor="Gray" Clicked="BtnHome_Clicked"/>
+
+        <Image x:Name="MainImage" />
+        <Label x:Name="PathLabel" FontSize="14" TextColor="Black"/>
+    </StackLayout>
+</ContentPage>

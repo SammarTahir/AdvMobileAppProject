@@ -86,16 +86,7 @@ namespace Project
             SelectedShow = null;
         }
 
-        public async Task SelectOneShowAsync(Shows s)
-        {
-            /*
-             * d is the selected dog that I want to pass to the Details page
-             * Use an interface to set this up - contract for methods that will be implemented somewhere named as IPageService - decouple from the View
-             */
-            if (showsList == null) return;
-
-            await _pageService.PushAsync(new ShowDetailPage(s));
-        }
+       
 
         internal void DeleteFromList(Shows show)
         {

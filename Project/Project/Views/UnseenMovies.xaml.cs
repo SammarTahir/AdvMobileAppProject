@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Plugin.Media;
+using Plugin.Media.Abstractions;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -32,17 +34,38 @@ namespace Project.Views
 
         }
 
-        // This should bring the user the IMDB page using the movie title/id
+        // This should bring the user to camrea function
         private async void LvShows_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            // The URI to launch
-            var uriBing = new Uri(@"http://www.bing.com");
+            await CrossMedia.Current.Initialize();
 
-            // Launch the URI
-           // var success = await Launcher.LaunchUriAsync(uriBing);
+            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            {
+                await DisplayAlert("No Camera",":( No camera available.", "OK");
+                return;
+            }
+
+            var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+            {
+                SaveToAlbum = true
+            });
+
+
+            if (file == null)
+                return;
 
             
+            PathLabel.Text = file.AlbumPath;
+
+            MainImage.Source = ImageSource.FromStream(() =>
+            {
+                var stream = file.GetStream();
+                return stream;
+            });
+            
         }
+
+
 
         private void BtnHome_Clicked(object sender, EventArgs e)
         {

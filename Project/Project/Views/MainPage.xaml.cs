@@ -32,13 +32,13 @@ namespace Project
         // This will allow the user to use the camera function only made for window platforms... so far
         private void BtnCamera_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushModalAsync(new MakeMoviePage());
         }
 
         // Bring the user the about us page
         private void BtnInfo_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushModalAsync(new SavedMedia());
         }
     }
 }
