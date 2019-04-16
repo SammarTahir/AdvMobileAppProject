@@ -4,11 +4,7 @@
              x:Class="Project.Views.SavedMedia">
     <StackLayout Orientation="Vertical"
                      Padding="10">
-        <Button Text="Select a Video"    
-                    x:Name="BtnFilm"    
-                    BackgroundColor="Green"    
-                    Clicked="BtnFilm_Clicked"/>
-        <Button Text="Select a Image"    
+        <Button Text="Select a Image/Video"    
                     x:Name="BtnSelect"    
                     BackgroundColor="Green"    
                     Clicked="BtnSelect_Clicked"/>

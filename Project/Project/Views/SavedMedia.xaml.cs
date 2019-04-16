@@ -55,7 +55,7 @@ namespace Project.Views
 
         private void BtnHome_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushModalAsync(new MainPage());
         }
     }
 }

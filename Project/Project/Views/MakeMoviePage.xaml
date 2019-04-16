@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Project.Views.MakeMoviePage">
+             x:Class="Project.MakeMoviePage">
     <ScrollView>
         <StackLayout Orientation="Vertical"
                      Padding="10">
             <Button Text="Make a movie"    
                     x:Name="BtnRecord"    
-                    BackgroundColor="Gray"    
+                    BackgroundColor="Red"    
                     Clicked="BtnRecord_Clicked"/>
-            <Button Text="Select on movie"    
-                    x:Name="BtnSelect"    
-                    BackgroundColor="Green"    
-                    Clicked="BtnSelect_Clicked"/>
-            <Image x:Name="image"/>
+
+            <Button x:Name="BtnHome" Text="Home" BackgroundColor="Gray" Clicked="BtnHome_Clicked"/>
+
+            <Image x:Name="MainImage" />
+            <Label x:Name="PathLabel" FontSize="14" TextColor="Black"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>
